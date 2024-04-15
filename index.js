@@ -5,8 +5,18 @@ const cors=require("cors")
 const dotenv=require("dotenv")
 
 dotenv.config();
-app.use(cors())
-app.options("*",cors())
+app.use(cors({
+    origin:"*",
+    credentials:true,
+    methods:["GET"]
+    
+}))
+app.options("*",cors({
+    origin:"*",
+    credentials:true,
+    methods:["GET"]
+    
+}))
 app.get('/medicine-data', (req, res) => {
   let { skip, limit } = req.query;
   
