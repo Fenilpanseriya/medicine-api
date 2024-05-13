@@ -28,7 +28,7 @@ app.get('/medicine-data', (req, res) => {
 });
 
 app.get('/',(req,res)=>{
-  let newData=data.forEach((medicine)=>{
+  let newData=data.map((medicine)=>{
     medicine["quantity"]=0;
   })
     const filteredData = newData.slice(0, 10);
