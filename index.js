@@ -30,6 +30,7 @@ app.get('/medicine-data', (req, res) => {
 app.get('/',(req,res)=>{
   let newData=data.map((medicine)=>{
     medicine["quantity"]=0;
+    return medicine;
   })
     const filteredData = newData.slice(0, 10);
     res.json(filteredData);
