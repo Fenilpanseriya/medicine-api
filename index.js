@@ -24,7 +24,11 @@ app.get('/medicine-data', (req, res) => {
   limit = parseInt(limit) || 10;
 
   const filteredData = data.slice(skip, skip + limit);
-  res.json(filteredData);
+  const filterenNewData=filteredData?.map((medicine)=>{
+    medicine["quantity"]=0;
+    return medicine;
+  })
+  res.json(filterenNewData);
 });
 
 app.get('/',(req,res)=>{
